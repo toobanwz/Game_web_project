@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" onclick="jump()">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jump game</title>
+    <!--<link rel="stylesheet" href="style.css">-->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #game{
+            position: relative;
+            left: 200px;
+            width: 80%;
+            height: 500px;
+        }
+        .platform{
+            position: absolute;
+            bottom: -2px;
+            left: -200px;
+            background-color: black;
+            height: 2px;
+            width: 130%;
+        }
+        #character{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70px;
+            height: 120px;
+            background-color: blue;
+        }
+        #character img{
+            height: 120px;
+            width: 70px;
+        }
+        .animate{
+            animation: jump 1s;
+        }
+        @keyframes jump{
+            0%{bottom: 0;}
+            45%{bottom: 120px;}
+            65%{bottom: 120px;}
+            100%{bottom: 0;}
+        }
+        #block{
+            position: absolute;
+            bottom: 0;
+            left: 100%;
+            width: 60px;
+            height: 60px;
+            background-color: red;
+            animation: slide 2s infinite linear;
+            animation-delay: 3s;
+        }
+        #block img{
+            height: 60px;
+            width: 60px;
+        }
+        @keyframes slide{
+            0%{left: 100%;}
+            100%{left: -10%;}
+        }
+        @media only screen and (max-width:600px){
+            #game{
+                left: 0;
+                height: 350px;
+            }
+            .platform{
+                width: 200%;
+            }
+            #block{
+                animation: slide 700ms infinite linear;
+                animation-delay: 2s;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="game">
+        <div class="platform"></div>
+        <div id="character"><img src="https://i.postimg.cc/6Q7RcPHz/character.jpg" alt="character not showing"></div>
+        <div id="block"><img src="https://i.postimg.cc/4NNYwMyt/block.png" alt="obstacle not showing"></div>
+    </div>
+</body>
+    <script>
+        var character = document.getElementById('character');
+            var block = document.getElementById('block');
+            function jump(){
+                if(character.classList != "animate"){
+                    character.classList.add("animate");
+                }
+                setTimeout(function(){
+                    character.classList.remove("animate");
+                }, 1000);
+            }
+            var checklost = setInterval(function(){
+                var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("bottom"));
+                var blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
+                if(blockLeft<70 && blockLeft>0 && characterTop<=60){
+                    block.style.animation ="none";
+                    block.style.display ="none";
+                    alert("YOU LOSE!");
+                }
+            },10);
+    </script>
+</html>

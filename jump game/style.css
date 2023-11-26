@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#game{
+    margin: auto;
+    position: relative;
+    width: 80%;
+    height: 500px;
+}
+.platform{
+    position: absolute;
+    bottom: -2px;
+    left: -200px;
+    background-color: black;
+    height: 2px;
+    width: 130%;
+}
+#character{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70px;
+    height: 120px;
+    background-color: blue; 
+}
+#character img{
+    height: 120px;
+    width: 70px;
+}
+.animate{
+    animation: jump 300ms;
+}
+@keyframes jump{
+    0%{bottom: 0;}
+    50%{bottom: 120px;}
+    70%{bottom: 120px;}
+    100%{bottom: 0;}
+}
+#block{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background-color: red;
+    animation: slide 700ms infinite linear;
+}
+#block img{
+    height: 60px;
+    width: 60px;
+}
+@keyframes slide{
+    0%{right: -200px;}
+    100%{right: 1300px;}
+}
+@media only screen and (max-width:600px){
+    #game{
+        height: 350px;
+    }
+    .platform{
+        width: 200%;
+    }
+}

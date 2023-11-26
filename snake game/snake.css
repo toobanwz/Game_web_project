@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.body{
+    background-color: aliceblue;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#scoreBox{
+    position: absolute;
+    top: 9px;
+    left: 500px;
+    font-size: 39px;
+    font-weight: bold;
+    font-family: 'New Tegomin', serif;
+}
+
+#hiscoreBox{
+    position: absolute;
+    top: 9px;
+    left: 800px;
+    font-size: 39px;
+    font-weight: bold;
+    font-family: 'New Tegomin', serif;
+}
+
+#board{
+    margin: auto;
+    background-color: white;
+    width: 900px;
+    height: 600px;
+    border: 5px solid black;
+    display: grid;
+    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(30, 1fr);
+}
+.head{
+    background-color: rgb(0, 0, 0);
+}
+.snake{
+    background-color: rgb(79, 79, 79);
+}
+.food{
+    background-color: red;
+    border-radius: 50%;
+}

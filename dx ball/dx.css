@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    border-bottom: 16px solid black;
+    height: 722px;
+    background-color: rgb(156, 106, 255);
+}
+.grid{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.grid div{
+    width: 10%;
+    height: 20px;
+    margin: 7px;
+    background: linear-gradient( red, brown);
+    border: 2px solid black;
+}
+.box{
+    position: fixed;
+    top: 95%;
+    left: 45%;
+}
+#ball{
+    height: 20px;
+    width: 20px;
+    background: linear-gradient(yellow, rgb(169, 169, 1));
+    border-radius: 50%;
+    position: fixed;
+    left: 50%;
+    top: 92%;
+}
+#paddle{
+    height: 20px;
+    width: 150px;
+    background-color: rgb(127, 255, 47);
+    border: 2px solod green;
+    border-radius: 3px;
+    position: fixed;
+}
+#result{
+    height: 40%;
+    width: 60%;
+    background-color: rgb(56,56,56);
+    padding: 80px;
+    border-radius: 20px;
+    font-size: 90px;
+    font-weight: 800;
+    text-align: center;
+    color: whitesmoke;
+    font-family: 'Courier New', Courier, monospace;
+    display: none;
+    margin: 10% auto;
+}
+#restart{
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    color: black;
+    background-color: antiquewhite;
+    font-size: 60px;
+    margin-top: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+}
